@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="airt-id" content="star-trek-ship-guide">
+<meta name="airt-version" content="1.0">
+<title>Star Trek ship guide (unofficial fan reference)</title>
+<style>
+@page{size:297mm 210mm;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#cfd5e0}
+body{font-family:"Barlow",sans-serif;color:#1d2433;font-size:7.6pt;line-height:1.22;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3,.kick,.pg,.st,.banner,.gt,.lb,th,.sn,.ticks{font-family:"Exo 2",sans-serif}
+.page{position:relative;width:297mm;height:210mm;overflow:hidden;background:#f8f7f1;page-break-after:always;break-after:page;margin:0 auto}
+.page:last-child{page-break-after:auto;break-after:auto}
+@media screen{.page{margin:6mm auto;box-shadow:0 1mm 4mm rgba(0,0,0,.25)}}
+header{position:absolute;left:0;right:0;top:0;height:29mm;background:#14213d;color:#fff;padding:5mm 10mm 0 10mm;display:flex;justify-content:space-between;gap:6mm;overflow:hidden}
+.stripe{position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 3mm,transparent 3mm 6mm);pointer-events:none}
+.htext{position:relative;z-index:2;flex:1;min-width:0}
+.kick{font-size:6.4pt;letter-spacing:.24em;text-transform:uppercase;color:#ffc94d;font-weight:700}
+h1{font-size:18pt;margin:.8mm 0 .6mm;font-weight:800;letter-spacing:.02em;line-height:1.05}
+.lede{margin:0;font-size:7.8pt;color:#d9e2f2}
+.keys{position:relative;z-index:2;background:rgba(255,255,255,.96);color:#1d2433;border-radius:1.6mm;padding:1.6mm 2.6mm;align-self:flex-start;font-size:6.8pt;width:76mm;flex:none;display:grid;grid-template-columns:1fr 1fr;gap:1mm 3mm}
+.keys b{grid-column:1/-1;font-family:"Exo 2",sans-serif;font-size:7pt}
+.keys span{display:flex;align-items:center;gap:1.2mm;white-space:nowrap}
+.k{display:inline-block;width:4mm;height:4mm;border-radius:.6mm;flex:none;border:.2mm solid rgba(0,0,0,.25)}
+.k.big{width:6mm;height:6mm;border-radius:1mm}
+/* page 1 table */
+.p1{position:absolute;left:10mm;right:10mm;top:33mm;bottom:15mm;display:grid;grid-template-columns:204mm 1fr;gap:5mm}
+.tb{border-collapse:collapse;table-layout:fixed;width:204mm;align-self:start}
+.tb th{background:#14213d;color:#fff;font-size:7pt;font-weight:700;text-align:left;padding:1mm 1.6mm;height:6mm}
+.tb th small{font-weight:400;color:#d9e2f2}
+.tb th.gc,.tb td.gc{width:3mm;padding:0}
+.tb th:nth-child(2){width:37mm}.tb th:nth-child(3){width:50mm}.tb th:nth-child(4){width:40mm}.tb th:nth-child(5){width:30mm}
+.tb td{border-bottom:.25mm solid #d6d3c4;padding:.5mm 1.6mm;height:8.1mm;vertical-align:middle;background:#fff}
+.tb tr:nth-child(odd) td:not(.gc){background:#f3f2ea}
+.nm b,.pd b{display:block;font-size:8.2pt;line-height:1.1}.nm small,.pd small{display:block;font-size:6.6pt;color:#5d667a;line-height:1.1}
+.pd b{font-size:7.4pt}
+.ln{font-size:8pt;line-height:1.15}.fd,.lg{font-size:7.2pt;line-height:1.12;color:#3a4256}
+.side1{display:flex;flex-direction:column;gap:3mm;min-width:0}
+.box{background:#fff;border:.25mm solid #d6d3c4;border-radius:1.8mm;padding:2.4mm 3mm}
+.box h3{margin:0 0 1.2mm;font-size:10pt;color:#14213d}
+.box p{margin:0;font-size:8.1pt;line-height:1.3}.box ul{margin:.8mm 0 0;padding-left:3.6mm;font-size:8.1pt;line-height:1.35}
+.kl{display:flex;align-items:center;gap:2.2mm;margin:1.2mm 0;font-size:7.6pt;line-height:1.2}
+.banner{background:#ffc94d;color:#14213d;font-weight:700;font-size:7.2pt;padding:1.6mm 2.6mm;border-radius:1.4mm;letter-spacing:.02em}
+/* cards */
+.grid{position:absolute;left:10mm;right:10mm;top:33mm;bottom:15mm;display:grid;gap:3mm}
+.g9{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr)}
+.card{position:relative;background:#fff;border:.3mm solid #d6d3c4;border-radius:2mm;overflow:hidden;box-shadow:0 .4mm 1mm rgba(20,33,61,.12);display:flex;flex-direction:column}
+.ctop{padding:.9mm 2.6mm;display:flex;justify-content:space-between;align-items:center;gap:2mm}
+.card h3{margin:0;font-size:11.5pt;font-weight:800;line-height:1.1;letter-spacing:.02em;white-space:nowrap}
+.gt{font-size:6.2pt;letter-spacing:.12em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.88);color:#1d2433;padding:.3mm 1.2mm;border-radius:.6mm;white-space:nowrap}
+.cb{padding:1mm 2.8mm 1.2mm;display:flex;flex-direction:column;flex:1;gap:.6mm}
+.gn{font-size:7.8pt;color:#5d667a;line-height:1.2}.gn b{color:#1d2433}
+.sec{display:flex;flex-direction:column;gap:.2mm}
+.st{font-size:6.4pt;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#5d667a}
+.sec ul{margin:0;padding-left:3.8mm;font-size:8.6pt;line-height:1.22}
+.rw{display:grid;grid-template-columns:13mm 1fr;align-items:start;gap:1mm}
+.lb{font-size:6.4pt;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:#5d667a;line-height:3.7mm}
+.tx{font-size:8.3pt;line-height:1.2}
+.tip{margin-top:auto;font-size:8.3pt;color:#3a4256;border-top:.2mm dashed #d6d3c4;padding-top:.7mm;line-height:1.2}
+.foot{position:absolute;left:10mm;right:10mm;bottom:5.5mm;height:6mm;display:flex;justify-content:space-between;align-items:center;gap:4mm;font-size:6.1pt;color:#4a5368;border-top:.25mm solid #a8a593;padding-top:.8mm}
+.foot .pg{letter-spacing:.2em;font-weight:700;color:#14213d;white-space:nowrap}
+/* timeline */
+.tl{position:relative;padding-bottom:4.4mm}
+.tr{display:grid;grid-template-columns:34mm 1fr;align-items:center;min-height:9.6mm;border-bottom:.2mm dashed #e3e1d6}
+.tr .sn{font-size:7.8pt;line-height:1.1;white-space:normal}
+.tr .sn small{display:block;font-family:"Barlow",sans-serif;font-weight:400;color:#5d667a;font-size:6.8pt;line-height:1.15}
+.lane{position:relative;height:6.6mm;background:repeating-linear-gradient(90deg,#e7e5da 0 .25mm,transparent .25mm calc(100%/6))}
+.lane i{position:absolute;top:1.4mm;height:3.8mm;border-radius:.8mm;background:#14213d}
+.lane i.film{width:3.2mm;height:3.2mm;top:1.7mm;border-radius:50%;background:#ffc94d;border:.3mm solid #14213d;transform:translateX(-50%)}
+.lane em{position:absolute;top:0;font-style:normal;font-size:7pt;line-height:6.6mm;color:#3a4256;white-space:nowrap}
+.tl .ticks{left:34mm}
+/* notes page */
+.nwrap{position:absolute;left:10mm;right:10mm;top:33mm;bottom:15mm;display:grid;grid-template-columns:122mm 1fr 64mm;gap:4mm}
+.sizes{display:flex;flex-direction:column;align-self:start}
+.sizes .sub{font-size:7.4pt;color:#3a4256;margin-bottom:1.6mm}
+.bars{position:relative;padding-bottom:4.2mm}
+.sz{display:grid;grid-template-columns:27mm 1fr;align-items:center;height:5.6mm}
+.sn{font-size:7pt;font-weight:700;white-space:nowrap}
+.sz.me .sn{color:#5d667a}
+.track{position:relative;height:3.8mm;background:repeating-linear-gradient(90deg,#e7e5da 0 .25mm,transparent .25mm calc(100%*5/27))}
+.track i{position:absolute;left:0;top:0;bottom:0;border-radius:0 .8mm .8mm 0}
+.track em{position:absolute;right:0;top:0;font-style:normal;font-size:6.6pt;color:#3a4256;line-height:3.8mm}
+.ticks{position:absolute;left:27mm;right:0;bottom:0;height:3.6mm}
+.ticks span{position:absolute;transform:translateX(-50%);font-size:6pt;color:#5d667a;top:.4mm}
+.ticks span:first-child{transform:none}
+.scale{display:flex;align-items:center;gap:2.4mm;margin-top:1.8mm;font-size:7.4pt;line-height:1.25;color:#3a4256}
+.pp{flex:none}
+.notes{display:flex;flex-direction:column;gap:2.2mm;min-width:0}
+.note{background:#fff;border:.25mm solid #d6d3c4;border-radius:1.8mm;padding:1.7mm 2.6mm}
+.note h3{margin:0 0 .7mm;font-size:9pt;color:#14213d;display:flex;align-items:center;gap:1.4mm}
+.nn{display:inline-flex;align-items:center;justify-content:center;width:4.2mm;height:4.2mm;border-radius:50%;background:#14213d;color:#ffc94d;font-size:6.4pt;flex:none}
+.note p{margin:0;font-size:7.9pt;line-height:1.26}
+.side{display:flex;flex-direction:column;gap:2.6mm;min-width:0}
+.side .box p,.side .box ul{font-size:7.7pt}
+.box.warn{background:#fff6dc;border-color:#e8c46a}
+</style></head><body>
+<section class="page">
+<header><div class="stripe"></div>
+<div class="htext"><div class="kick">Unofficial fan reference &middot; Star Trek ship guide &middot; our own words</div>
+<h1>Starships at a glance</h1><p class="lede">18 well-known starships from across the series and films: who flies them, what they are, when they fly in the stories and where you can see them.</p></div>
+<div class="keys"><b>Colour key</b><span><i class="k" style="background:#1c7ed6"></i>Starfleet</span>
+<span><i class="k" style="background:#c92a2a"></i>Klingon</span>
+<span><i class="k" style="background:#2f9e44"></i>Romulan</span>
+<span><i class="k" style="background:#7048e8"></i>Other powers</span>
+</div>
+</header>
+<div class="p1"><table class="tb"><tr><th class="gc"></th><th>Ship <small>(registry or class)</small></th><th>What it is</th><th>Class and story era</th><th>Captain or crew</th><th>Seen in</th></tr>
+<tr data-name="Enterprise"><td class="gc" style="background:#1c7ed6"></td><td class="nm"><b>Enterprise</b><small>NX-01</small></td><td class="ln">Earth&#x27;s first warp 5 ship, exploring before the Federation existed</td><td class="pd"><b>NX class explorer</b><small>22nd century</small></td><td class="lg">Captain Jonathan Archer</td><td class="fd">Enterprise (2001–2005)</td></tr>
+<tr data-name="USS Enterprise"><td class="gc" style="background:#1c7ed6"></td><td class="nm"><b>USS Enterprise</b><small>NCC-1701</small></td><td class="ln">The original heavy cruiser, sent on a five-year mission</td><td class="pd"><b>Constitution class</b><small>23rd century</small></td><td class="lg">Captain James T. Kirk (Pike before him)</td><td class="fd">The Original Series (1966–1969)</td></tr>
+<tr data-name="USS Excelsior"><td class="gc" style="background:#1c7ed6"></td><td class="nm"><b>USS Excelsior</b><small>NCC-2000</small></td><td class="ln">Big new test ship built to try out transwarp drive</td><td class="pd"><b>Excelsior class</b><small>23rd century</small></td><td class="lg">Captain Hikaru Sulu</td><td class="fd">The Search for Spock (1984)</td></tr>
+<tr data-name="USS Enterprise-D"><td class="gc" style="background:#1c7ed6"></td><td class="nm"><b>USS Enterprise-D</b><small>NCC-1701-D</small></td><td class="ln">Huge explorer with families on board and a saucer that splits off</td><td class="pd"><b>Galaxy class explorer</b><small>24th century</small></td><td class="lg">Captain Jean-Luc Picard</td><td class="fd">The Next Generation (1987–1994)</td></tr>
+<tr data-name="USS Defiant"><td class="gc" style="background:#1c7ed6"></td><td class="nm"><b>USS Defiant</b><small>NX-74205</small></td><td class="ln">Small, tough warship first designed to fight the Borg</td><td class="pd"><b>Defiant class escort</b><small>24th century</small></td><td class="lg">Captain Benjamin Sisko</td><td class="fd">Deep Space Nine (1993–1999)</td></tr>
+<tr data-name="USS Voyager"><td class="gc" style="background:#1c7ed6"></td><td class="nm"><b>USS Voyager</b><small>NCC-74656</small></td><td class="ln">Explorer swept across the galaxy, on a long journey home</td><td class="pd"><b>Intrepid class explorer</b><small>24th century</small></td><td class="lg">Captain Kathryn Janeway</td><td class="fd">Voyager (1995–2001)</td></tr>
+<tr data-name="USS Enterprise-E"><td class="gc" style="background:#1c7ed6"></td><td class="nm"><b>USS Enterprise-E</b><small>NCC-1701-E</small></td><td class="ln">Picard&#x27;s second Enterprise, seen in the later films</td><td class="pd"><b>Sovereign class</b><small>24th century</small></td><td class="lg">Captain Jean-Luc Picard</td><td class="fd">First Contact (1996)</td></tr>
+<tr data-name="USS Discovery"><td class="gc" style="background:#1c7ed6"></td><td class="nm"><b>USS Discovery</b><small>NCC-1031</small></td><td class="ln">Test ship for the spore drive that jumps across space</td><td class="pd"><b>Crossfield class</b><small>23rd and 32nd centuries</small></td><td class="lg">Captains Lorca, Pike, Saru and Burnham</td><td class="fd">Discovery (2017–2024)</td></tr>
+<tr data-name="USS Cerritos"><td class="gc" style="background:#1c7ed6"></td><td class="nm"><b>USS Cerritos</b><small>NCC-75567</small></td><td class="ln">Support ship that makes second contact with new worlds</td><td class="pd"><b>California class</b><small>24th century</small></td><td class="lg">Captain Carol Freeman</td><td class="fd">Lower Decks (2020–2024)</td></tr>
+<tr data-name="Klingon Bird-of-Prey"><td class="gc" style="background:#c92a2a"></td><td class="nm"><b>Klingon Bird-of-Prey</b><small>B&#x27;rel class</small></td><td class="ln">Small, fast Klingon warship with wings and a cloaking device</td><td class="pd"><b>Warship and escort</b><small>23rd and 24th centuries</small></td><td class="lg">Klingon Defence Force</td><td class="fd">The Search for Spock (1984), plus 2 more</td></tr>
+<tr data-name="K&#x27;t&#x27;inga class"><td class="gc" style="background:#c92a2a"></td><td class="nm"><b>K&#x27;t&#x27;inga class</b><small>Battle cruiser</small></td><td class="ln">Long-necked battle cruiser built on an older Klingon design</td><td class="pd"><b>Battle cruiser</b><small>23rd and 24th centuries</small></td><td class="lg">Klingon Defence Force</td><td class="fd">The Motion Picture (1979)</td></tr>
+<tr data-name="Vor&#x27;cha class"><td class="gc" style="background:#c92a2a"></td><td class="nm"><b>Vor&#x27;cha class</b><small>Attack cruiser</small></td><td class="ln">Big Klingon attack cruiser from the later series</td><td class="pd"><b>Attack cruiser</b><small>24th century</small></td><td class="lg">Klingon Defence Force</td><td class="fd">The Next Generation (1987–1994), plus 1 more</td></tr>
+<tr data-name="Romulan warbird"><td class="gc" style="background:#2f9e44"></td><td class="nm"><b>Romulan warbird</b><small>D&#x27;deridex class</small></td><td class="ln">Enormous double-hulled Romulan warship</td><td class="pd"><b>Warbird</b><small>24th century</small></td><td class="lg">Romulan military</td><td class="fd">The Next Generation (1987–1994)</td></tr>
+<tr data-name="Romulan Bird-of-Prey"><td class="gc" style="background:#2f9e44"></td><td class="nm"><b>Romulan Bird-of-Prey</b><small>23rd century</small></td><td class="ln">Early Romulan warship armed with a powerful plasma torpedo</td><td class="pd"><b>Warship</b><small>23rd century</small></td><td class="lg">Romulan Star Empire</td><td class="fd">The Original Series (1966–1969)</td></tr>
+<tr data-name="Borg cube"><td class="gc" style="background:#7048e8"></td><td class="nm"><b>Borg cube</b><small>Cube</small></td><td class="ln">Giant cube with no bridge and a hull that repairs itself</td><td class="pd"><b>Borg ship</b><small>24th century</small></td><td class="lg">The Borg Collective</td><td class="fd">The Next Generation (1987–1994), plus 2 more</td></tr>
+<tr data-name="Ferengi Marauder"><td class="gc" style="background:#7048e8"></td><td class="nm"><b>Ferengi Marauder</b><small>D&#x27;Kora class</small></td><td class="ln">Ferengi ship used for both trading and fighting</td><td class="pd"><b>Marauder and trader</b><small>24th century</small></td><td class="lg">Ferengi Alliance</td><td class="fd">The Next Generation (1987–1994)</td></tr>
+<tr data-name="Galor class"><td class="gc" style="background:#7048e8"></td><td class="nm"><b>Galor class</b><small>Cruiser</small></td><td class="ln">Main Cardassian warship of the later 24th century</td><td class="pd"><b>Cruiser</b><small>24th century</small></td><td class="lg">Cardassian military</td><td class="fd">The Next Generation (1987–1994), plus 1 more</td></tr>
+<tr data-name="Jem&#x27;Hadar fighter"><td class="gc" style="background:#7048e8"></td><td class="nm"><b>Jem&#x27;Hadar fighter</b><small>Attack ship</small></td><td class="ln">Small, fast attack ship that made up most of the Dominion fleet</td><td class="pd"><b>Attack fighter</b><small>24th century</small></td><td class="lg">The Dominion</td><td class="fd">Deep Space Nine (1993–1999)</td></tr>
+</table>
+<div class="side1">
+ <div class="box"><h3>How to read it</h3><p>Each row is one ship. The <b>coloured strip</b> on the left shows who flies it. The <b>story era</b> is when it flies in the stories; <b>seen in</b> is the real-world show or film and the years it first aired.</p></div>
+
+ <div class="box"><h3>Colour key</h3><div class="kl"><i class="k big" style="background:#1c7ed6"></i><div><b>Starfleet</b> (9)<br>Ships of the United Federation of Planets (and Earth before it)</div>
+</div>
+<div class="kl"><i class="k big" style="background:#c92a2a"></i><div><b>Klingon</b> (3)<br>Warships of the Klingon Empire</div>
+</div>
+<div class="kl"><i class="k big" style="background:#2f9e44"></i><div><b>Romulan</b> (2)<br>Ships of the Romulan Star Empire, famous for cloaking</div>
+</div>
+<div class="kl"><i class="k big" style="background:#7048e8"></i><div><b>Other powers</b> (4)<br>The Borg, the Ferengi, the Cardassians and the Dominion</div>
+</div>
+</div>
+
+ <div class="box"><h3>Ship names</h3><p>Starfleet ships carry a registry number like NCC-1701. Later ships named Enterprise add a letter, like the Enterprise-D and Enterprise-E in this guide.</p></div>
+
+ <div class="banner">UNOFFICIAL FAN REFERENCE &middot; our own words &middot; no logos, insignia, stills or official art</div>
+
+</div>
+</div>
+<div class="foot"><span>Star Trek ship guide &middot; <b>Unofficial fan reference</b>, written in our own words. Not affiliated with, sponsored by or endorsed by Paramount or CBS.</span>
+<span>Made by AiRT Official &middot; github.com/airt-gallery</span>
+<span class="pg">PAGE 1 OF 4</span>
+</div>
+</section>
+<section class="page">
+<header><div class="stripe"></div>
+<div class="htext"><div class="kick">Unofficial fan reference &middot; Star Trek ship guide &middot; our own words</div>
+<h1>Starfleet ships</h1><p class="lede">One card per ship: registry and class, two field notes, the captain, when it flies in the stories, where you can see it, and one fun fact.</p></div>
+<div class="keys"><b>Colour key</b><span><i class="k" style="background:#1c7ed6"></i>Starfleet</span>
+<span><i class="k" style="background:#c92a2a"></i>Klingon</span>
+<span><i class="k" style="background:#2f9e44"></i>Romulan</span>
+<span><i class="k" style="background:#7048e8"></i>Other powers</span>
+</div>
+</header>
+<div class="grid g9"><div class="card" data-name="Enterprise"><div class="ctop" style="background:#1c7ed6;color:#fff"><h3>Enterprise</h3><span class="gt">Starfleet</span>
+</div>
+<div class="cb"><div class="gn">Registry <b>NX-01</b> &middot; NX class explorer</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>The first Earth ship built around a warp 5 engine.</li>
+<li>Launched in 2151 and retired in 2161.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Captain</span>
+<span class="tx">Jonathan Archer</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">22nd century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">Enterprise (2001–2005)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> In real life, its class shares names with the first space shuttles.</div>
+</div>
+</div>
+<div class="card" data-name="USS Enterprise"><div class="ctop" style="background:#1c7ed6;color:#fff"><h3>USS Enterprise</h3><span class="gt">Starfleet</span>
+</div>
+<div class="cb"><div class="gn">Registry <b>NCC-1701</b> &middot; Constitution class</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Famous for its five-year missions of exploration.</li>
+<li>Christopher Pike was captain before Kirk.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Captain</span>
+<span class="tx">James T. Kirk (Pike before him)</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">23rd century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Original Series (1966–1969)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Kirk set it to blow itself up so Klingons couldn&#x27;t take it.</div>
+</div>
+</div>
+<div class="card" data-name="USS Excelsior"><div class="ctop" style="background:#1c7ed6;color:#fff"><h3>USS Excelsior</h3><span class="gt">Starfleet</span>
+</div>
+<div class="cb"><div class="gn">Registry <b>NCC-2000</b> &middot; Excelsior class</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>The first Starfleet ship fitted with transwarp drive.</li>
+<li>Later won fame under Captain Sulu.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Captain</span>
+<span class="tx">Hikaru Sulu</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">23rd century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Search for Spock (1984)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Scotty sabotaged it so it couldn&#x27;t chase Kirk.</div>
+</div>
+</div>
+<div class="card" data-name="USS Enterprise-D"><div class="ctop" style="background:#1c7ed6;color:#fff"><h3>USS Enterprise-D</h3><span class="gt">Starfleet</span>
+</div>
+<div class="cb"><div class="gn">Registry <b>NCC-1701-D</b> &middot; Galaxy class explorer</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>The saucer could separate from the rest of the ship.</li>
+<li>Families, including children, lived on board.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Captain</span>
+<span class="tx">Jean-Luc Picard</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Next Generation (1987–1994)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> It crash-landed on the planet Veridian III in 2371.</div>
+</div>
+</div>
+<div class="card" data-name="USS Defiant"><div class="ctop" style="background:#1c7ed6;color:#fff"><h3>USS Defiant</h3><span class="gt">Starfleet</span>
+</div>
+<div class="cb"><div class="gn">Registry <b>NX-74205</b> &middot; Defiant class escort</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Designed in response to the Borg threat.</li>
+<li>Only about 50 crew, on just five decks.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Captain</span>
+<span class="tx">Benjamin Sisko</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">Deep Space Nine (1993–1999)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> The Romulans lent it a cloaking device to use.</div>
+</div>
+</div>
+<div class="card" data-name="USS Voyager"><div class="ctop" style="background:#1c7ed6;color:#fff"><h3>USS Voyager</h3><span class="gt">Starfleet</span>
+</div>
+<div class="cb"><div class="gn">Registry <b>NCC-74656</b> &middot; Intrepid class explorer</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Swept 70,000 light years into the Delta Quadrant.</li>
+<li>Packed with new bio-neural circuitry.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Captain</span>
+<span class="tx">Kathryn Janeway</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">Voyager (1995–2001)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> One of the few Starfleet ships that could land on a planet.</div>
+</div>
+</div>
+<div class="card" data-name="USS Enterprise-E"><div class="ctop" style="background:#1c7ed6;color:#fff"><h3>USS Enterprise-E</h3><span class="gt">Starfleet</span>
+</div>
+<div class="cb"><div class="gn">Registry <b>NCC-1701-E</b> &middot; Sovereign class</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Seen as the best of Starfleet ship design.</li>
+<li>Launched from the San Francisco Fleet Yards.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Captain</span>
+<span class="tx">Jean-Luc Picard</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">First Contact (1996)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Its crew followed the Borg back in time to the year 2063.</div>
+</div>
+</div>
+<div class="card" data-name="USS Discovery"><div class="ctop" style="background:#1c7ed6;color:#fff"><h3>USS Discovery</h3><span class="gt">Starfleet</span>
+</div>
+<div class="cb"><div class="gn">Registry <b>NCC-1031</b> &middot; Crossfield class</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Built from the ground up to test the spore drive.</li>
+<li>Its sister ship was the USS Glenn.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Captain</span>
+<span class="tx">Captains Lorca, Pike, Saru and Burnham</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">23rd and 32nd centuries</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">Discovery (2017–2024)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> It travelled to the 32nd century and was refitted there.</div>
+</div>
+</div>
+<div class="card" data-name="USS Cerritos"><div class="ctop" style="background:#1c7ed6;color:#fff"><h3>USS Cerritos</h3><span class="gt">Starfleet</span>
+</div>
+<div class="cb"><div class="gn">Registry <b>NCC-75567</b> &middot; California class</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Handles second contact, after the first meeting.</li>
+<li>Its stories follow the junior crew.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Captain</span>
+<span class="tx">Carol Freeman</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">Lower Decks (2020–2024)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> It once took Voyager, by then a museum ship, home to Earth.</div>
+</div>
+</div>
+</div>
+<div class="foot"><span>Star Trek ship guide &middot; <b>Unofficial fan reference</b>, written in our own words. Not affiliated with, sponsored by or endorsed by Paramount or CBS.</span>
+<span>Made by AiRT Official &middot; github.com/airt-gallery</span>
+<span class="pg">PAGE 2 OF 4</span>
+</div>
+</section>
+<section class="page">
+<header><div class="stripe"></div>
+<div class="htext"><div class="kick">Unofficial fan reference &middot; Star Trek ship guide &middot; our own words</div>
+<h1>Klingon, Romulan and other powers</h1><p class="lede">Birds-of-prey, warbirds and battle cruisers, then the Borg, the Ferengi, the Cardassians and the Dominion.</p></div>
+<div class="keys"><b>Colour key</b><span><i class="k" style="background:#1c7ed6"></i>Starfleet</span>
+<span><i class="k" style="background:#c92a2a"></i>Klingon</span>
+<span><i class="k" style="background:#2f9e44"></i>Romulan</span>
+<span><i class="k" style="background:#7048e8"></i>Other powers</span>
+</div>
+</header>
+<div class="grid g9"><div class="card" data-name="Klingon Bird-of-Prey"><div class="ctop" style="background:#c92a2a;color:#fff"><h3>Klingon Bird-of-Prey</h3><span class="gt">Klingon</span>
+</div>
+<div class="cb"><div class="gn"><b>B&#x27;rel class</b> &middot; Warship and escort</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Can hide from view with a cloaking device.</li>
+<li>A small crew of about 6 to 12.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Flown by</span>
+<span class="tx">Klingon Defence Force</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">23rd and 24th centuries</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Search for Spock (1984); The Next Generation (1987–1994); Deep Space Nine (1993–1999)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Kirk&#x27;s crew took one and named it HMS Bounty.</div>
+</div>
+</div>
+<div class="card" data-name="K&#x27;t&#x27;inga class"><div class="ctop" style="background:#c92a2a;color:#fff"><h3>K&#x27;t&#x27;inga class</h3><span class="gt">Klingon</span>
+</div>
+<div class="cb"><div class="gn"><b>Battle cruiser</b></div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>A bridge pod at the front, on a thin neck.</li>
+<li>A newer version of the D7 class.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Flown by</span>
+<span class="tx">Klingon Defence Force</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">23rd and 24th centuries</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Motion Picture (1979)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Three were destroyed by the giant V&#x27;ger cloud in the first film.</div>
+</div>
+</div>
+<div class="card" data-name="Vor&#x27;cha class"><div class="ctop" style="background:#c92a2a;color:#fff"><h3>Vor&#x27;cha class</h3><span class="gt">Klingon</span>
+</div>
+<div class="cb"><div class="gn"><b>Attack cruiser</b></div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>First appeared around 2367.</li>
+<li>Armed with disruptor cannons and photon torpedoes.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Flown by</span>
+<span class="tx">Klingon Defence Force</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Next Generation (1987–1994); Deep Space Nine (1993–1999)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> For a time, one served as the flagship of the Klingon fleet.</div>
+</div>
+</div>
+<div class="card" data-name="Romulan warbird"><div class="ctop" style="background:#2f9e44;color:#fff"><h3>Romulan warbird</h3><span class="gt">Romulan</span>
+</div>
+<div class="cb"><div class="gn"><b>D&#x27;deridex class</b> &middot; Warbird</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>One of the largest Romulan ships of its time.</li>
+<li>A split hull with a big forward &#x27;head&#x27;.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Flown by</span>
+<span class="tx">Romulan military</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Next Generation (1987–1994)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Its arrival ended 53 years of Romulan isolation.</div>
+</div>
+</div>
+<div class="card" data-name="Romulan Bird-of-Prey"><div class="ctop" style="background:#2f9e44;color:#fff"><h3>Romulan Bird-of-Prey</h3><span class="gt">Romulan</span>
+</div>
+<div class="cb"><div class="gn"><b>23rd century</b> &middot; Warship</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Hidden by a cloaking device.</li>
+<li>Armed with a plasma torpedo.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Flown by</span>
+<span class="tx">Romulan Star Empire</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">23rd century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Original Series (1966–1969)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Its first duel with Kirk&#x27;s Enterprise lasted over ten hours.</div>
+</div>
+</div>
+<div class="card" data-name="Borg cube"><div class="ctop" style="background:#7048e8;color:#fff"><h3>Borg cube</h3><span class="gt">Other powers</span>
+</div>
+<div class="cb"><div class="gn"><b>Cube</b> &middot; Borg ship</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>No bridge: every system is spread through the ship.</li>
+<li>Its hull can regenerate after damage.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Flown by</span>
+<span class="tx">The Borg Collective</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Next Generation (1987–1994); Voyager (1995–2001); First Contact (1996)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Each side is about 3 km long, so it&#x27;s about 3 km wide too.</div>
+</div>
+</div>
+<div class="card" data-name="Ferengi Marauder"><div class="ctop" style="background:#7048e8;color:#fff"><h3>Ferengi Marauder</h3><span class="gt">Other powers</span>
+</div>
+<div class="cb"><div class="gn"><b>D&#x27;Kora class</b> &middot; Marauder and trader</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Used as a trading ship, cargo ship or warship.</li>
+<li>Picard called it very impressive on first sight.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Flown by</span>
+<span class="tx">Ferengi Alliance</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Next Generation (1987–1994)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Its crew could be anywhere from 1 to 450.</div>
+</div>
+</div>
+<div class="card" data-name="Galor class"><div class="ctop" style="background:#7048e8;color:#fff"><h3>Galor class</h3><span class="gt">Other powers</span>
+</div>
+<div class="cb"><div class="gn"><b>Cruiser</b></div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>The main warship of the Cardassian military.</li>
+<li>Armed with phaser banks and a big forward disruptor.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Flown by</span>
+<span class="tx">Cardassian military</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">The Next Generation (1987–1994); Deep Space Nine (1993–1999)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> Starfleet called them destroyers; the Dominion, assault ships.</div>
+</div>
+</div>
+<div class="card" data-name="Jem&#x27;Hadar fighter"><div class="ctop" style="background:#7048e8;color:#fff"><h3>Jem&#x27;Hadar fighter</h3><span class="gt">Other powers</span>
+</div>
+<div class="cb"><div class="gn"><b>Attack ship</b> &middot; Attack fighter</div>
+<div class="sec"><div class="st">Field notes</div>
+<ul><li>Formed the bulk of the Dominion fleet.</li>
+<li>Could land on a planet and take off again.</li>
+</ul>
+</div>
+<div class="rw"><span class="lb">Flown by</span>
+<span class="tx">The Dominion</span>
+</div>
+<div class="rw"><span class="lb">Era</span>
+<span class="tx">24th century</span>
+</div>
+<div class="rw"><span class="lb">Seen in</span>
+<span class="tx">Deep Space Nine (1993–1999)</span>
+</div>
+<div class="tip"><b>Fun fact:</b> At first, its weapons went straight through Starfleet shields.</div>
+</div>
+</div>
+</div>
+<div class="foot"><span>Star Trek ship guide &middot; <b>Unofficial fan reference</b>, written in our own words. Not affiliated with, sponsored by or endorsed by Paramount or CBS.</span>
+<span>Made by AiRT Official &middot; github.com/airt-gallery</span>
+<span class="pg">PAGE 3 OF 4</span>
+</div>
+</section>
+<section class="page">
+<header><div class="stripe"></div>
+<div class="htext"><div class="kick">Unofficial fan reference &middot; Star Trek ship guide &middot; our own words</div>
+<h1>Timeline, notes and sources</h1><p class="lede">When each show and film came out, short notes for new fans, and where every fact was checked.</p></div>
+<div class="keys"><b>Colour key</b><span><i class="k" style="background:#1c7ed6"></i>Starfleet</span>
+<span><i class="k" style="background:#c92a2a"></i>Klingon</span>
+<span><i class="k" style="background:#2f9e44"></i>Romulan</span>
+<span><i class="k" style="background:#7048e8"></i>Other powers</span>
+</div>
+</header>
+
+<div class="nwrap"><div class="box sizes"><h3>Real-world timeline</h3><p class="sub">When each show first aired (bars) and each film came out (dots), with the ships from this guide that appear in them. Each grid line is 10 years.</p><div class="tl"><div class="tr"><span class="sn">The Original Series<small>series: USS Enterprise, Romulan Bird-of-Prey</small></span>
+<span class="lane"><i data-k="TOS" data-a="1966" data-b="1969" style="left:1.667%;width:6.667%"></i><em style="left:9.13%">1966–1969</em></span>
+</div>
+<div class="tr"><span class="sn">The Next Generation<small>series: USS Enterprise-D, Klingon Bird-of-Prey, Vor&#x27;cha class, Romulan warbird, Borg cube, Ferengi Marauder, Galor class</small></span>
+<span class="lane"><i data-k="TNG" data-a="1987" data-b="1994" style="left:36.667%;width:13.333%"></i><em style="left:50.80%">1987–1994</em></span>
+</div>
+<div class="tr"><span class="sn">Deep Space Nine<small>series: USS Defiant, Klingon Bird-of-Prey, Vor&#x27;cha class, Galor class, Jem&#x27;Hadar fighter</small></span>
+<span class="lane"><i data-k="DS9" data-a="1993" data-b="1999" style="left:46.667%;width:11.667%"></i><em style="left:59.13%">1993–1999</em></span>
+</div>
+<div class="tr"><span class="sn">Voyager<small>series: USS Voyager, Borg cube</small></span>
+<span class="lane"><i data-k="VOY" data-a="1995" data-b="2001" style="left:50.000%;width:11.667%"></i><em style="right:50.80%">1995–2001</em></span>
+</div>
+<div class="tr"><span class="sn">Enterprise<small>series: Enterprise</small></span>
+<span class="lane"><i data-k="ENT" data-a="2001" data-b="2005" style="left:60.000%;width:8.333%"></i><em style="right:40.80%">2001–2005</em></span>
+</div>
+<div class="tr"><span class="sn">Discovery<small>series: USS Discovery</small></span>
+<span class="lane"><i data-k="DIS" data-a="2017" data-b="2024" style="left:86.667%;width:13.333%"></i><em style="right:14.13%">2017–2024</em></span>
+</div>
+<div class="tr"><span class="sn">Lower Decks<small>series: USS Cerritos</small></span>
+<span class="lane"><i data-k="LD" data-a="2020" data-b="2024" style="left:91.667%;width:8.333%"></i><em style="right:9.13%">2020–2024</em></span>
+</div>
+<div class="tr"><span class="sn">The Motion Picture<small>film: K&#x27;t&#x27;inga class</small></span>
+<span class="lane"><i class="film" data-k="film|1" data-a="1979" data-b="1979" style="left:calc(23.333% + 1.6mm)"></i><em style="left:calc(23.333% + 4.2mm)">1979</em></span>
+</div>
+<div class="tr"><span class="sn">The Search for Spock<small>film: USS Excelsior, Klingon Bird-of-Prey</small></span>
+<span class="lane"><i class="film" data-k="film|3" data-a="1984" data-b="1984" style="left:calc(31.667% + 1.6mm)"></i><em style="left:calc(31.667% + 4.2mm)">1984</em></span>
+</div>
+<div class="tr"><span class="sn">First Contact<small>film: USS Enterprise-E, Borg cube</small></span>
+<span class="lane"><i class="film" data-k="film|8" data-a="1996" data-b="1996" style="left:calc(51.667% + 1.6mm)"></i><em style="left:calc(51.667% + 4.2mm)">1996</em></span>
+</div>
+<div class="ticks"><span style="left:0.00%">1965</span>
+<span style="left:16.67%">1975</span>
+<span style="left:33.33%">1985</span>
+<span style="left:50.00%">1995</span>
+<span style="left:66.67%">2005</span>
+<span style="left:83.33%">2015</span>
+<span style="left:100.00%">2025</span>
+</div>
+</div>
+</div>
+<div class="notes"><div class="note"><h3><span class="nn">1</span>
+Story time or real time?</h3><p>Story time and real time don&#x27;t match. The Enterprise NX-01 flies in the 2150s, about a century before Kirk, but its series first aired in 2001.</p></div>
+<div class="note"><h3><span class="nn">2</span>
+So many Enterprises</h3><p>Kirk&#x27;s NCC-1701 came first in real life. Picard commanded two more: the Enterprise-D on TV, then the Enterprise-E in the films.</p></div>
+<div class="note"><h3><span class="nn">3</span>
+Cloaking devices</h3><p>Romulan and Klingon ships could turn invisible with a cloaking device. Starfleet&#x27;s Defiant carried one on loan from the Romulans.</p></div>
+<div class="note"><h3><span class="nn">4</span>
+Lost far from home</h3><p>Voyager was swept 70,000 light years away. At top speed, the trip home was first expected to take about 75 years.</p></div>
+<div class="note"><h3><span class="nn">5</span>
+Second contact</h3><p>First contact is the famous first meeting with a new people. The Cerritos does the next step: the follow-up visit.</p></div>
+<div class="note"><h3><span class="nn">6</span>
+Fan reference</h3><p>Registries, classes and captains come from the shows and films. Where sources disagree, we use Memory Alpha, the Star Trek wiki.</p></div>
+</div>
+
+<div class="side">
+ <div class="box"><h3>How this guide was made</h3><p>Built with Ai on AiRT Official from one ASTARR prompt, then checked by hand. Every ship's registry, class, captain, story era and the shows it appears in were checked one by one against trusted sources. All wording is our own.</p></div>
+
+ <div class="box"><h3>Sources (checked 27 Nov 2026)</h3><ul><li>Memory Alpha (memory-alpha.fandom.com), the Star Trek wiki: one page per ship or class</li>
+<li>Wikipedia: Star Trek and Star Trek (film series), for air dates</li>
+</ul>
+</div>
+
+ <div class="box warn"><h3>Unofficial fan reference</h3><p>A free fan reference made for fun and learning. Star Trek and all related names are trade marks of CBS Studios Inc., part of Paramount. Not affiliated with, sponsored by or endorsed by Paramount or CBS. No logos, insignia, stills or official art.</p></div>
+
+ <div class="box"><h3>Print tips</h3><p>Print in colour on A4, landscape, at 100% (actual size).</p></div>
+
+</div>
+</div>
+<div class="foot"><span>Star Trek ship guide &middot; <b>Unofficial fan reference</b>, written in our own words. Not affiliated with, sponsored by or endorsed by Paramount or CBS.</span>
+<span>Made by AiRT Official &middot; github.com/airt-gallery</span>
+<span class="pg">PAGE 4 OF 4</span>
+</div>
+</section>
+
+<script>
+(function(){var MM=96/25.4,bad=[];
+function R(el,pg){var a=el.getBoundingClientRect(),b=pg.getBoundingClientRect();return{l:a.left-b.left,t:a.top-b.top,r:a.right-b.left,b:a.bottom-b.top};}
+document.querySelectorAll(".page").forEach(function(pg,i){var W=pg.clientWidth,H=pg.clientHeight,fb=R(pg.querySelector(".foot"),pg).t;
+ var els=pg.querySelectorAll(".card,.note,.box,table,.banner,.side1,.p1,.nwrap,header .keys,.htext");
+ els.forEach(function(el){var r=R(el,pg);if(r.b>fb-0.5||r.r>W-9*MM||r.l<9*MM-1||r.t<0)if(!el.matches("header .keys,.htext")||r.b>29*MM||r.r>W-9*MM)bad.push("page "+(i+1)+": "+el.className+" out of bounds "+Math.round(r.l)+","+Math.round(r.t)+"-"+Math.round(r.r)+","+Math.round(r.b)+" foot "+Math.round(fb));});
+ pg.querySelectorAll(".card,.note,.box,.side1,.side,.notes,.htext,header .keys,.ctop,.cb,.tx,.gn,.tb td,.foot span,.sn").forEach(function(el){if(el.scrollHeight>el.clientHeight+1||el.scrollWidth>el.clientWidth+1)bad.push("page "+(i+1)+": clipped "+el.className+" ("+el.textContent.slice(0,30)+") "+el.scrollHeight+">"+el.clientHeight+" / "+el.scrollWidth+">"+el.clientWidth);});
+ pg.querySelectorAll(".card").forEach(function(c){var last=c.querySelector(".cb").lastElementChild,cr=R(c,pg),lr=R(last,pg);if(lr.b>cr.b-1)bad.push("page "+(i+1)+": card content touches bottom "+c.textContent.slice(0,25));
+   var h=c.querySelector("h3"),g=c.querySelector(".gt"),hr=R(h,pg),gr=R(g,pg);if(hr.r>gr.l-1)bad.push("page "+(i+1)+": card title runs into group tag "+h.textContent);});
+ pg.querySelectorAll(".tb td").forEach(function(td){var r=R(td,pg);if(r.b-r.t>8.6*MM)bad.push("page "+(i+1)+": table row too tall "+td.textContent.slice(0,30));});
+ pg.querySelectorAll(".lane").forEach(function(t){var lr=R(t,pg);t.querySelectorAll("em").forEach(function(e){var r=R(e,pg);if(r.r>lr.r+0.5||r.l<lr.l-0.5)bad.push("page "+(i+1)+": timeline label off its lane "+e.textContent);});});
+ var cs=[].slice.call(pg.querySelectorAll(".card,.note,.box,.tb,.banner"));
+ for(var a=0;a<cs.length;a++)for(var b=a+1;b<cs.length;b++){var p=R(cs[a],pg),q=R(cs[b],pg);if(p.l<q.r-1&&q.l<p.r-1&&p.t<q.b-1&&q.t<p.b-1&&!cs[a].contains(cs[b])&&!cs[b].contains(cs[a]))bad.push("page "+(i+1)+": overlap "+cs[a].className+" / "+cs[b].className);}
+ var keys=pg.querySelector("header .keys"),ht=pg.querySelector(".htext");if(keys&&ht){var k=R(keys,pg),h=R(ht,pg);if(h.r>k.l-1)bad.push("page "+(i+1)+": title runs into key");}
+});
+window.ROWS=[].slice.call(document.querySelectorAll(".tb tr[data-name]")).map(function(tr){return tr.dataset.name;});
+window.CARDS=[].slice.call(document.querySelectorAll(".card")).map(function(c){return c.dataset.name;});
+window.BARS=[].slice.call(document.querySelectorAll(".lane i[data-a]")).map(function(s){var L=s.parentNode.getBoundingClientRect(),r=s.getBoundingClientRect();return [s.dataset.k,parseFloat(s.dataset.a),parseFloat(s.dataset.b),r.left-L.left,r.width,L.width];});
+window.LAYOUT_PROBLEMS=bad;window.PAGE_COUNT=document.querySelectorAll(".page").length;})();
+</script>
+</body></html>
